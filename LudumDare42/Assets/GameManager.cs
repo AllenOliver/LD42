@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 /// <summary>
@@ -26,7 +28,7 @@ public class GameManager : MonoBehaviour {
 
 
     #region UI Variables
-    public Slider MemoryFill;
+    public Image MemoryFill;
 
     public Text MemoryText;
     public Text HealthText;
@@ -58,6 +60,12 @@ public class GameManager : MonoBehaviour {
         HealthText.text ="HP: " + MaxPlayerHealth + " / " + CurrentPlayerHealth;
         MemoryText.text = Memory + " MB";
         float fillamount = Memory / 100f;
-        MemoryFill.value = Mathf.Clamp01(fillamount);
+        MemoryFill.fillAmount = Mathf.Clamp01(fillamount);
+    }
+
+    public void Respawn()
+    {
+        var sceneNow = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(sceneNow);
     }
 }
