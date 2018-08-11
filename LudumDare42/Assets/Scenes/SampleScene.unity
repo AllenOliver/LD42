@@ -113,59 +113,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &206856886
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4636430841654002, guid: 3dc40e613b0c6da4dbbd9e9f53d312ac, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4636430841654002, guid: 3dc40e613b0c6da4dbbd9e9f53d312ac, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4636430841654002, guid: 3dc40e613b0c6da4dbbd9e9f53d312ac, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4636430841654002, guid: 3dc40e613b0c6da4dbbd9e9f53d312ac, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4636430841654002, guid: 3dc40e613b0c6da4dbbd9e9f53d312ac, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4636430841654002, guid: 3dc40e613b0c6da4dbbd9e9f53d312ac, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4636430841654002, guid: 3dc40e613b0c6da4dbbd9e9f53d312ac, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4636430841654002, guid: 3dc40e613b0c6da4dbbd9e9f53d312ac, type: 2}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114039184489359044, guid: 3dc40e613b0c6da4dbbd9e9f53d312ac,
-        type: 2}
-      propertyPath: prefabToSpawn
-      value: 
-      objectReference: {fileID: 1987127235085788, guid: cfe8466e5823bf64eac0969c911ca4df,
-        type: 2}
-    - target: {fileID: 114039184489359044, guid: 3dc40e613b0c6da4dbbd9e9f53d312ac,
-        type: 2}
-      propertyPath: SecondsBetweenSpawns
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 3dc40e613b0c6da4dbbd9e9f53d312ac, type: 2}
-  m_IsPrefabAsset: 0
 --- !u!114 &260410989 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114290437443829034, guid: 3dbe91caa84bdbd4194edec3aa91649a,
@@ -183,25 +130,36 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 426717838}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1701af0df6c96fa45bfa3662b319541b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   prefabPoolOptions:
-  - prefabTransform: {fileID: 4370329208826914, guid: cfe8466e5823bf64eac0969c911ca4df,
-      type: 2}
-    instancesToPreload: 10
+  - prefabTransform: {fileID: 0}
+    instancesToPreload: 1
     isPoolExpanded: 1
-    showDebugLog: 1
-    poolCanGrow: 1
+    showDebugLog: 0
+    poolCanGrow: 0
     cullDespawned: 0
     cullAbove: 10
     cullDelay: 2
     cullAmount: 1
     enableHardLimit: 0
     hardLimit: 10
-    recycle: 1
+    recycle: 0
+  - prefabTransform: {fileID: 0}
+    instancesToPreload: 1
+    isPoolExpanded: 1
+    showDebugLog: 0
+    poolCanGrow: 0
+    cullDespawned: 0
+    cullAbove: 10
+    cullDelay: 2
+    cullAmount: 1
+    enableHardLimit: 0
+    hardLimit: 10
+    recycle: 0
   showDebugLog: 0
   isRootExpanded: 1
   autoAddMissingPrefabPool: 0

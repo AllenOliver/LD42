@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using EZ_Pooling;
 
-public class FixedRateSpawner : MonoBehaviour
+public class FixedRateSpawner : BaseSpawner
 {
     public GameObject prefabToSpawn;
     [SerializeField] float SecondsBetweenSpawns = 1f;
@@ -12,13 +12,16 @@ public class FixedRateSpawner : MonoBehaviour
 
     void Update()
     {
-        _secondsSinceLastSpawn += Time.deltaTime;
-
-        if (_secondsSinceLastSpawn > SecondsBetweenSpawns)
+        if (isActive)
         {
-            EZ_PoolManager.Spawn(prefabToSpawn.transform, gameObject.transform.position, gameObject.transform.rotation);
-            _secondsSinceLastSpawn = 0f;
-            Debug.Log("FixedRateSpawner.Update(): New enemy spawned");
+            _secondsSinceLastSpawn += Time.deltaTime;
+
+            if (_secondsSinceLastSpawn > SecondsBetweenSpawns)
+            {
+                EZ_PoolManager.Spawn(prefabToSpawn.transform, gameObject.transform.position, gameObject.transform.rotation);
+                _secondsSinceLastSpawn = 0f;
+                Debug.Log("FixedRateSpawner.Update(): New enemy spawned");
+            }
         }
     }
 }
