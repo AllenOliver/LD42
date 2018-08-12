@@ -20,6 +20,6 @@ public class MainMenu : MonoBehaviour
 
     public void OnCreditsPressed()
     {
-        Debug.Log("MainMenu.OnCreditsPressed()");
+        SceneManager.LoadScene("CreditScene");
     }
 }

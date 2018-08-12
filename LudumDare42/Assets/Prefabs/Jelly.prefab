@@ -209,6 +209,10 @@ MonoBehaviour:
   DeathParticles: {fileID: 1575517153828332, guid: 6b739ad3068bfd949aeae8941b5920c9,
     type: 2}
   deathSound: {fileID: 8300000, guid: 4bddc567f94db7a45a128b30c1b56952, type: 3}
+  moveSpeed: 15
+  frequencyMin: 0
+  frequencyMax: 0
+  isMob: 1
   MemorySpace: 4
   ItemsToDrop: []
 --- !u!212 &212714358789172956
