@@ -32,11 +32,15 @@ public class GameManager : MonoBehaviour {
     public GameObject RestartPanel;
     public GameObject WinPanel;
     public GameObject DeathPanel;
+    public GameObject FadePanel;
 
     public Image MemoryFill;
     public Text MemoryText;
     public Text HealthText;
 
+    bool winOpened;
+    bool loseOpened;
+    bool memoryOpened;
     #endregion
 
     private void Awake()
@@ -48,20 +52,31 @@ public class GameManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		
-	}
+        FadePanel.GetComponent<Animation>().Play("FadeIn");
+        winOpened = false;
+        loseOpened = false;
+        memoryOpened = false;
+    }
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        if (Memory < 0)
+        {
+            Memory = 0;
+        }
+        else if (Memory >= 100)
+        {
+            memoryOpened = true;
+        }
+    }
 
     /// <summary>
     /// Sets UI every tick
     /// </summary>
     void FixedUpdate()
     {
-        HealthText.text ="HP: " + MaxPlayerHealth + " / " + CurrentPlayerHealth;
+
+        HealthText.text ="HP: " + CurrentPlayerHealth + " / " + MaxPlayerHealth;
         MemoryText.text = Memory + " MB";
         float fillamount = Memory / 100f;
         MemoryFill.fillAmount = Mathf.Clamp01(fillamount);
@@ -78,16 +93,24 @@ public class GameManager : MonoBehaviour {
 
     public void Respawn()
     {
+        StartCoroutine(RespawnRoutine());
+
+    }
+
+    IEnumerator RespawnRoutine()
+    {
+        player.GetComponent<SpriteRenderer>().enabled = false;
+        yield return new WaitForSeconds(1.75f);
+        FadePanel.GetComponent<Animation>().Play("FadeOut");
         var sceneNow = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(sceneNow);
     }
-
     /// <summary>
     /// Checks for memeory limit reached and ends game if reached.
     /// </summary>
     public void MemCheck()
     {
-        if (Memory >= 100)
+        if (memoryOpened)
         {
             RestartPanel.GetComponent<Animation>().Play("Open");
         }

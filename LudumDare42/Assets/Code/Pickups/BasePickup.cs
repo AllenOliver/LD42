@@ -13,7 +13,7 @@ public class BasePickup : MonoBehaviour {
     #region Variables
 
     public string Name;
-
+    public string Description;
     #endregion
 
     /// <summary>
@@ -44,10 +44,16 @@ public class BasePickup : MonoBehaviour {
         switch (col.gameObject.tag)
         {
             case ("Player"):
-                
+                PowerupEffect();
+                Destroy(gameObject);
                 break;
 
         }
+    }
+
+    public virtual void PowerupEffect()
+    {
+        Debug.Log("Give me some effects here");
     }
 
 

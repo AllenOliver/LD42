@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61713e997ecbe7d48af28a54e75fe361, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Memory: 30
+  Memory: 0
   MaxPlayerHealth: 5
   CurrentPlayerHealth: 0
   RestartPanel: {fileID: 0}
@@ -73,6 +73,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabPoolOptions:
+  - prefabTransform: {fileID: 4988615673943106, guid: ccf730ea3779c0d4288eaec01d6dfd13,
+      type: 2}
+    instancesToPreload: 200
+    isPoolExpanded: 1
+    showDebugLog: 0
+    poolCanGrow: 0
+    cullDespawned: 0
+    cullAbove: 10
+    cullDelay: 2
+    cullAmount: 1
+    enableHardLimit: 0
+    hardLimit: 10
+    recycle: 1
   - prefabTransform: {fileID: 4370329208826914, guid: cfe8466e5823bf64eac0969c911ca4df,
       type: 2}
     instancesToPreload: 2000

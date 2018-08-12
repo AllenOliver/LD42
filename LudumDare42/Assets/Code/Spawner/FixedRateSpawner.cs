@@ -6,10 +6,23 @@ using EZ_Pooling;
 public class FixedRateSpawner : MonoBehaviour
 {
     public GameObject prefabToSpawn;
-    [SerializeField] float SecondsBetweenSpawns = 1f;
+    [SerializeField] float SecondsBetweenSpawns;
 
+    public int MemorySpace;
+    public int MaxHP;
+    int CurrentHP;
     float _secondsSinceLastSpawn = 0f;
+    GameManager gm;
 
+  
+
+
+    private void Start()
+    {
+        gm = FindObjectOfType<GameManager>();
+        gm.Memory += MemorySpace;
+        CurrentHP = MaxHP;
+    }
     void Update()
     {
         _secondsSinceLastSpawn += Time.deltaTime;
@@ -21,4 +34,44 @@ public class FixedRateSpawner : MonoBehaviour
             Debug.Log("FixedRateSpawner.Update(): New enemy spawned");
         }
     }
+
+    IEnumerator HurtSpawner()
+    {
+        CurrentHP--;
+        if (CurrentHP <= 0)
+        {
+            Die();
+        }
+
+        GetComponent<SpriteRenderer>().color = Color.red;
+
+        yield return new WaitForSeconds(.5f);
+        GetComponent<SpriteRenderer>().color = Color.white;
+
+    }
+
+    public void Die()
+    {
+        StartCoroutine(DieRoutine());
+    }
+
+    public IEnumerator DieRoutine()
+    {
+
+        gm.Memory -= MemorySpace;
+
+        yield return new WaitForSeconds(.5f);
+        Destroy(gameObject);
+    }
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        switch (col.gameObject.tag)
+        {
+            case"PlayerProjectile":
+                StartCoroutine(HurtSpawner());
+                break;
+        }
+    }
+
 }
