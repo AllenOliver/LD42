@@ -82,6 +82,7 @@ public class FixedRateSpawner : MonoBehaviour
     {
         if (DoorToOpen)
         {
+            gm.OpenToolTip("Door Opened!","You have opened more rooms to clean.");
             DoorToOpen.SetActive(false);
         }
             
