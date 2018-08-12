@@ -1,9 +1,15 @@
 fileFormatVersion: 2
-guid: 7052dd58dbc181d42bbbdaaa5f11ec0d
+guid: 075e2b9c8beb2b8468df9b96830977bc
 TextureImporter:
   fileIDToRecycleName:
-    21300000: winbutt_0
-    21300002: winbutt_1
+    21300000: soldier_0
+    21300002: soldier_1
+    21300004: soldier_2
+    21300006: soldier_3
+    21300008: soldier_4
+    21300010: soldier_5
+    21300012: soldier_6
+    21300014: soldier_7
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -108,12 +114,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: winbutt_0
+      name: soldier_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 32
+        y: 16
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -122,18 +128,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a54f390856012df41ada2eb1cd66a76b
+      spriteID: dace6fd414776f64d99027c7904c581d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: winbutt_1
+      name: soldier_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
+        x: 16
+        y: 16
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -142,7 +148,127 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2cd12fe40dac7524689e38bf12a7454a
+      spriteID: 2f161aa2e9a53694cb01661c95a77b22
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: soldier_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f91aae312527a204bacc7afefae09e53
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: soldier_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a4dc5e3f828d674780277978f451b14
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: soldier_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b14d00203e52c8249b1361d1fbcd42f0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: soldier_5
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 320ac3ab6eea95241ad12a3cf31eb39a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: soldier_6
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 088ad797d0782444fa763e7d4642d06a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: soldier_7
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 408b562c4f4191c4fad512253c5d1470
       vertices: []
       indices: 
       edges: []
@@ -150,7 +276,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 268e55662616da8438754fb318d8e5db
+    spriteID: da82e72446b137c41a48ff662b104add
     vertices: []
     indices: 
     edges: []

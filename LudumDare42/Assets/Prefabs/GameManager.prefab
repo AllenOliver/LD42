@@ -20,6 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 224160138227995686}
   - component: {fileID: 114758103255416492}
+  - component: {fileID: 114777462015717572}
+  - component: {fileID: 114474811614833852}
   m_Layer: 5
   m_Name: GameManager
   m_TagString: Untagged
@@ -27,6 +29,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &114474811614833852
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1046209498022132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 554ad2d831d85e9459edaea82fbd936e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PausePanel: {fileID: 0}
 --- !u!114 &114758103255416492
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -41,9 +55,41 @@ MonoBehaviour:
   Memory: 30
   MaxPlayerHealth: 5
   CurrentPlayerHealth: 0
+  RestartPanel: {fileID: 0}
+  WinPanel: {fileID: 0}
+  DeathPanel: {fileID: 0}
   MemoryFill: {fileID: 0}
   MemoryText: {fileID: 0}
   HealthText: {fileID: 0}
+--- !u!114 &114777462015717572
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1046209498022132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1701af0df6c96fa45bfa3662b319541b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabPoolOptions:
+  - prefabTransform: {fileID: 4370329208826914, guid: cfe8466e5823bf64eac0969c911ca4df,
+      type: 2}
+    instancesToPreload: 2000
+    isPoolExpanded: 1
+    showDebugLog: 1
+    poolCanGrow: 0
+    cullDespawned: 0
+    cullAbove: 10
+    cullDelay: 2
+    cullAmount: 1
+    enableHardLimit: 0
+    hardLimit: 10
+    recycle: 1
+  showDebugLog: 0
+  isRootExpanded: 1
+  autoAddMissingPrefabPool: 0
+  usePoolManager: 1
 --- !u!224 &224160138227995686
 RectTransform:
   m_ObjectHideFlags: 1

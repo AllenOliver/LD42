@@ -28,8 +28,12 @@ public class GameManager : MonoBehaviour {
 
 
     #region UI Variables
-    public Image MemoryFill;
+    
+    public GameObject RestartPanel;
+    public GameObject WinPanel;
+    public GameObject DeathPanel;
 
+    public Image MemoryFill;
     public Text MemoryText;
     public Text HealthText;
 
@@ -61,11 +65,45 @@ public class GameManager : MonoBehaviour {
         MemoryText.text = Memory + " MB";
         float fillamount = Memory / 100f;
         MemoryFill.fillAmount = Mathf.Clamp01(fillamount);
+        MemCheck();
+    }
+
+    /// <summary>
+    /// Opens panel on player death
+    /// </summary>
+    public void OpenDeathPanel()
+    {
+        DeathPanel.GetComponent<Animation>().Play("Open");
     }
 
     public void Respawn()
     {
         var sceneNow = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(sceneNow);
+    }
+
+    /// <summary>
+    /// Checks for memeory limit reached and ends game if reached.
+    /// </summary>
+    public void MemCheck()
+    {
+        if (Memory >= 100)
+        {
+            RestartPanel.GetComponent<Animation>().Play("Open");
+        }
+
+    }
+
+    /// <summary>
+    /// If array of spawners is less than or equal to zero
+    /// win game 
+    /// </summary>
+    public void SpawnerCheck()
+    {
+        var objects = FindObjectsOfType<FixedRateSpawner>();
+        if (objects.Length <=0)
+        {
+            WinPanel.GetComponent<Animation>().Play("Open");
+        }
     }
 }
