@@ -116,7 +116,7 @@ public class Player : MonoBehaviour {
     {
         GetComponent<SpriteRenderer>().color = Color.red;
         gm.CurrentPlayerHealth--;
-
+        
         Die();
         yield return new WaitForSeconds(.5f);
         GetComponent<SpriteRenderer>().color = Color.white;
@@ -131,6 +131,7 @@ public class Player : MonoBehaviour {
         Debug.Log("It happened");
         if (gm.CurrentPlayerHealth <= 0)
         {
+            StartCoroutine(PlaySound(DieSound));
             Instantiate(DeathParticles, gameObject.transform.position, Quaternion.identity);
 
             gm.Respawn();
@@ -168,9 +169,7 @@ public class Player : MonoBehaviour {
         {
             if (ShotDelay > 20)
             {
-                audio.clip = Shoot;
-                audio.pitch = Random.Range(0,1);
-                audio.Play(0);
+                StartCoroutine(PlaySound(Shoot));
                 EquippedProjectile = EZ_Pooling.EZ_PoolManager.Spawn(EquippedProjectile.transform, shotSpot.transform.position, gameObject.transform.rotation).gameObject;
                 EquippedProjectile.GetComponent<Rigidbody2D>().AddForce(shooting * 8, ForceMode2D.Impulse);
                 ShotDelay = 0;
@@ -182,5 +181,12 @@ public class Player : MonoBehaviour {
 
         }
 
+    }
+
+    IEnumerator PlaySound(AudioClip sound)
+    {
+        audio.clip = sound;
+        yield return null;
+        audio.Play();
     }
 }

@@ -16,6 +16,8 @@ public class BaseEnemy : MonoBehaviour {
     public string Name;
     public int MaxHP;
     public GameObject DeathParticles;
+    public AudioClip deathSound;
+     AudioSource audio;
     [Header("This is how much memory he clears when killed")]
     public int MemorySpace;
     int CurrentHP;
@@ -41,6 +43,7 @@ public class BaseEnemy : MonoBehaviour {
         gameObject.tag = "Enemy";
         gm = FindObjectOfType<GameManager>();
         gm.Memory += MemorySpace;
+        audio = GetComponent<AudioSource>();
 	}
 
     // Update is called once per frame
@@ -67,6 +70,7 @@ public class BaseEnemy : MonoBehaviour {
         CurrentHP--;
         if (CurrentHP <= 0)
         {
+            StartCoroutine(PlaySound(deathSound));
             Die();
         }
 
@@ -82,6 +86,7 @@ public class BaseEnemy : MonoBehaviour {
     /// </summary>
     public virtual void Die()
     {
+        
         StartCoroutine(DieRoutine());
     }
 
@@ -96,7 +101,18 @@ public class BaseEnemy : MonoBehaviour {
             Instantiate(ItemsToDrop[UnityEngine.Random.Range(0, ItemsToDrop.Count)], gameObject.transform.position, Quaternion.identity);
 
         }
-        yield return new WaitForSeconds(.015f);
+        GetComponent<CircleCollider2D>().enabled = false;
+        GetComponent<SpriteRenderer>().enabled = false;
+        audio.Play();
+        yield return new WaitForSeconds(audio.clip.length);
         EZ_PoolManager.Despawn(gameObject.transform);
+    }
+
+    IEnumerator PlaySound(AudioClip sound)
+    {
+        Debug.Log("Played");
+        audio.clip = sound;
+        yield return null;
+        audio.Play();
     }
 }

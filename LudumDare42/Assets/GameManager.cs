@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour {
         {
             Memory = 0;
         }
-        else if (Memory >= 100)
+        else if (Memory >= 1000)
         {
             memoryOpened = true;
         }
@@ -78,7 +78,7 @@ public class GameManager : MonoBehaviour {
 
         HealthText.text ="HP: " + CurrentPlayerHealth + " / " + MaxPlayerHealth;
         MemoryText.text = Memory + " MB";
-        float fillamount = Memory / 100f;
+        float fillamount = Memory / 1000f;
         MemoryFill.fillAmount = Mathf.Clamp01(fillamount);
         MemCheck();
     }

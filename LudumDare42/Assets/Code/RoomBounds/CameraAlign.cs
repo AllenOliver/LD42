@@ -6,7 +6,7 @@ public class CameraAlign : MonoBehaviour {
 
     private Bounds currentBounds;
 
-    private float alignDuration = .5f;
+    private float alignDuration = .75f;
 
     IEnumerator AlignToNewBounds()
     {

@@ -6,6 +6,8 @@ using EZ_Pooling;
 public class FixedRateSpawner : MonoBehaviour
 {
     public GameObject prefabToSpawn;
+    public GameObject DoorToOpen;
+    public GameObject DeathParticles;
     [SerializeField] float SecondsBetweenSpawns;
 
     public int MemorySpace;
@@ -52,6 +54,8 @@ public class FixedRateSpawner : MonoBehaviour
 
     public void Die()
     {
+        EZ_PoolManager.Spawn(DeathParticles.transform, gameObject.transform.position, gameObject.transform.rotation);
+        StartCoroutine(OpenDoor());
         StartCoroutine(DieRoutine());
     }
 
@@ -72,6 +76,16 @@ public class FixedRateSpawner : MonoBehaviour
                 StartCoroutine(HurtSpawner());
                 break;
         }
+    }
+
+    IEnumerator OpenDoor()
+    {
+        if (DoorToOpen)
+        {
+            DoorToOpen.SetActive(false);
+        }
+            
+        yield return null;
     }
 
 }
