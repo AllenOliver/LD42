@@ -84,14 +84,14 @@ public class BaseEnemy : MonoBehaviour {
         StartCoroutine(DieRoutine());
     }
 
-   IEnumerator DieRoutine()
+   public virtual IEnumerator DieRoutine()
     {
         //play anim
         gm.Memory -= MemorySpace;
         int randomChance = UnityEngine.Random.Range(0,100);
         if (randomChance > 85 && ItemsToDrop.Count > 0)
         {
-            Instantiate(ItemsToDrop[UnityEngine.Random.Range(1, ItemsToDrop.Count)], gameObject.transform.position, Quaternion.identity);
+            Instantiate(ItemsToDrop[UnityEngine.Random.Range(0, ItemsToDrop.Count)], gameObject.transform.position, Quaternion.identity);
 
         }
         yield return new WaitForSeconds(.5f);

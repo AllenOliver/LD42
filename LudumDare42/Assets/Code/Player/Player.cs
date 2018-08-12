@@ -16,6 +16,7 @@ public class Player : MonoBehaviour {
     public int CurrentHP;
     public AudioSource audio;
     private int ShotDelay;
+    private int HurtDelay;
     public Transform shotSpot;
 
     public GameObject DeathParticles;
@@ -35,6 +36,7 @@ public class Player : MonoBehaviour {
     void Start()
     {
         ShotDelay = 0;
+        HurtDelay = 0;
         rbody = GetComponent<Rigidbody2D>();
         rbody.gravityScale = 0;
         rbody.constraints = RigidbodyConstraints2D.FreezeRotation;
@@ -115,7 +117,7 @@ public class Player : MonoBehaviour {
         Die();
         yield return new WaitForSeconds(.5f);
         GetComponent<SpriteRenderer>().color = Color.white;
-
+        HurtDelay = 0;
     }
 
     /// <summary>
@@ -138,15 +140,19 @@ public class Player : MonoBehaviour {
     {
         switch (col.gameObject.tag)
         {
-            case "Spikes":
-                HurtPlayer();
+            case "Enemy":
+                if (HurtDelay > 30)
+                {
+                    HurtPlayer();
+
+                }
                 break;
         }
     }
     void FixedUpdate()
     {
         ShotDelay += 1;
-
+        HurtDelay += 1;
     }
     /// <summary>
     /// 
