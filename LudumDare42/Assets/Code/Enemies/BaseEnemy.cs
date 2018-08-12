@@ -15,6 +15,7 @@ public class BaseEnemy : MonoBehaviour {
 
     public string Name;
     public int MaxHP;
+    public GameObject DeathParticles;
     [Header("This is how much memory he clears when killed")]
     public int MemorySpace;
     int CurrentHP;
@@ -86,6 +87,7 @@ public class BaseEnemy : MonoBehaviour {
 
    public virtual IEnumerator DieRoutine()
     {
+        EZ_PoolManager.Spawn(DeathParticles.transform, gameObject.transform.position, gameObject.transform.rotation);
         //play anim
         gm.Memory -= MemorySpace;
         int randomChance = UnityEngine.Random.Range(0,100);
@@ -94,7 +96,7 @@ public class BaseEnemy : MonoBehaviour {
             Instantiate(ItemsToDrop[UnityEngine.Random.Range(0, ItemsToDrop.Count)], gameObject.transform.position, Quaternion.identity);
 
         }
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(.015f);
         EZ_PoolManager.Despawn(gameObject.transform);
     }
 }

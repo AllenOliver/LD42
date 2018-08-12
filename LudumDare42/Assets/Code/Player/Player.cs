@@ -19,6 +19,9 @@ public class Player : MonoBehaviour {
     private int HurtDelay;
     public Transform shotSpot;
 
+    public AudioClip Shoot;
+    public AudioClip DieSound;
+
     public GameObject DeathParticles;
     
 
@@ -165,6 +168,9 @@ public class Player : MonoBehaviour {
         {
             if (ShotDelay > 20)
             {
+                audio.clip = Shoot;
+                audio.pitch = Random.Range(0,1);
+                audio.Play(0);
                 EquippedProjectile = EZ_Pooling.EZ_PoolManager.Spawn(EquippedProjectile.transform, shotSpot.transform.position, gameObject.transform.rotation).gameObject;
                 EquippedProjectile.GetComponent<Rigidbody2D>().AddForce(shooting * 8, ForceMode2D.Impulse);
                 ShotDelay = 0;

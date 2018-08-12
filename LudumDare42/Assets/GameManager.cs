@@ -112,9 +112,19 @@ public class GameManager : MonoBehaviour {
     {
         if (memoryOpened)
         {
-            RestartPanel.GetComponent<Animation>().Play("Open");
+            StartCoroutine(PlayErrorSound());
+            
+           
         }
 
+    }
+
+
+    IEnumerator PlayErrorSound()
+    {
+        RestartPanel.GetComponent<AudioSource>().Play();
+        yield return new WaitForSeconds(RestartPanel.GetComponent<AudioSource>().clip.length);
+        RestartPanel.GetComponent<Animation>().Play("Open");
     }
 
     /// <summary>
