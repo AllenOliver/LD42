@@ -34,6 +34,10 @@ public class GameManager : MonoBehaviour {
     public GameObject DeathPanel;
     public GameObject FadePanel;
 
+    public GameObject ToolTipPanel;
+    public Text ToolTipBody;
+    public Text ToolTipTitle;
+
     public Image MemoryFill;
     public Text MemoryText;
     public Text HealthText;
@@ -140,5 +144,20 @@ public class GameManager : MonoBehaviour {
         {
             WinPanel.GetComponent<Animation>().Play("Open");
         }
+    }
+
+
+    public void OpenToolTip(string ToolTipTitle, string ToolTipBody)
+    {
+        StartCoroutine(OpenToolTipRoutine(ToolTipTitle, ToolTipBody));
+    }
+
+    IEnumerator OpenToolTipRoutine(string ToolTipTitleString, string ToolTipBodyString)
+    {
+        ToolTipPanel.GetComponent<Animation>().Play("Open");
+        ToolTipBody.text = ToolTipBodyString;
+        ToolTipTitle.text = ToolTipTitleString;
+        yield return new WaitForSeconds(3f);
+        ToolTipPanel.GetComponent<Animation>().Play("Close");
     }
 }

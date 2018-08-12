@@ -14,6 +14,7 @@ public class BasePickup : MonoBehaviour {
 
     public string Name;
     public string Description;
+    GameManager gm;
     #endregion
 
     /// <summary>
@@ -31,6 +32,7 @@ public class BasePickup : MonoBehaviour {
     public virtual void Start()
     {
         gameObject.tag = "PickUp";
+        gm = FindObjectOfType<GameManager>();
     }
 
     // Update is called once per frame
@@ -45,6 +47,7 @@ public class BasePickup : MonoBehaviour {
         {
             case ("Player"):
                 PowerupEffect();
+                gm.OpenToolTip(Name, Description);
                 Destroy(gameObject);
                 break;
 
