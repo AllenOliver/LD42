@@ -37,7 +37,8 @@ public class GameManager : MonoBehaviour {
     public Image MemoryFill;
     public Text MemoryText;
     public Text HealthText;
-
+    public AudioClip LevelSong;
+    public AudioClip BossSong;
     bool winOpened;
     bool loseOpened;
     bool memoryOpened;
@@ -56,6 +57,7 @@ public class GameManager : MonoBehaviour {
         winOpened = false;
         loseOpened = false;
         memoryOpened = false;
+        
     }
 	
 	// Update is called once per frame
