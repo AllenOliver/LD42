@@ -71,8 +71,8 @@ public class Player : MonoBehaviour {
         {
             transform.Translate(new Vector3(Input.GetAxisRaw("Horizontal") * 5f * Time.deltaTime, 0f, 0f));
             LastMove = new Vector2(Input.GetAxisRaw("Horizontal"), 0f);
-
             isMoving = true;
+
 
         }
 
@@ -80,18 +80,18 @@ public class Player : MonoBehaviour {
         {
             transform.Translate(new Vector3(0f, Input.GetAxisRaw("Vertical") * 5f * Time.deltaTime, 0f));
             LastMove = new Vector2(0f, Input.GetAxisRaw("Vertical"));
-
             isMoving = true;
+
 
         }
 
-        /*
+        
         anim.SetFloat("LastMoveX", LastMove.x);
         anim.SetFloat("LastMoveY", LastMove.y);
         anim.SetFloat("MoveX", Input.GetAxisRaw("Horizontal"));
         anim.SetFloat("MoveY", Input.GetAxisRaw("Vertical"));
-        anim.SetBool("PlayerMoving", isMoving);
-        */
+        anim.SetBool("IsMoving", isMoving);
+        
 
     }
 

@@ -19,6 +19,8 @@ public class BaseEnemy : MonoBehaviour {
     public int MemorySpace;
     int CurrentHP;
     GameManager gm;
+
+    public List<BasePickup> ItemsToDrop;
     #endregion
 
     /// <summary>
@@ -33,7 +35,7 @@ public class BaseEnemy : MonoBehaviour {
     /// <summary>
     /// Pooled starting point
     /// </summary>
-    public virtual void Spawned () {
+    public virtual void OnSpawned() {
         CurrentHP = MaxHP;
         gameObject.tag = "Enemy";
         gm = FindObjectOfType<GameManager>();
@@ -50,7 +52,7 @@ public class BaseEnemy : MonoBehaviour {
         switch (col.gameObject.tag)
         {
             case ("PlayerProjectile"):
-                HurtEnemy();
+                StartCoroutine( HurtEnemy());
                 break;
 
         }
@@ -59,13 +61,19 @@ public class BaseEnemy : MonoBehaviour {
     /// <summary>
     /// Called when enemy gets hit
     /// </summary>
-    public virtual void HurtEnemy()
+    public virtual IEnumerator HurtEnemy()
     {
         CurrentHP--;
         if (CurrentHP <= 0)
         {
             Die();
         }
+
+        GetComponent<SpriteRenderer>().color = Color.red;
+     
+        yield return new WaitForSeconds(.5f);
+        GetComponent<SpriteRenderer>().color = Color.white;
+
     }
 
     /// <summary>
@@ -80,6 +88,12 @@ public class BaseEnemy : MonoBehaviour {
     {
         //play anim
         gm.Memory -= MemorySpace;
+        int randomChance = UnityEngine.Random.Range(0,100);
+        if (randomChance > 85 && ItemsToDrop.Count > 0)
+        {
+            Instantiate(ItemsToDrop[UnityEngine.Random.Range(1, ItemsToDrop.Count)], gameObject.transform.position, Quaternion.identity);
+
+        }
         yield return new WaitForSeconds(.5f);
         EZ_PoolManager.Despawn(gameObject.transform);
     }
