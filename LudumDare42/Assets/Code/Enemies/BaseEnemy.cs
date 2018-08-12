@@ -13,10 +13,17 @@ public class BaseEnemy : MonoBehaviour {
 
     #region Variables
 
+    private Player player;
     public string Name;
     public int MaxHP;
     public GameObject DeathParticles;
     public AudioClip deathSound;
+    public float moveSpeed;
+    [Header("Enemy move frequency is a random number between these values")]
+    public float frequencyMin;
+    public float frequencyMax;
+    [Header("Use this for standard mob behavior")]
+    public bool isMob;
      AudioSource audio;
     [Header("This is how much memory he clears when killed")]
     public int MemorySpace;
@@ -44,6 +51,10 @@ public class BaseEnemy : MonoBehaviour {
         gm = FindObjectOfType<GameManager>();
         gm.Memory += MemorySpace;
         audio = GetComponent<AudioSource>();
+        player = FindObjectOfType<Player>();
+        if (isMob) {
+            StartCoroutine("Move");
+        }
 	}
 
     // Update is called once per frame
@@ -79,6 +90,19 @@ public class BaseEnemy : MonoBehaviour {
         yield return new WaitForSeconds(.5f);
         GetComponent<SpriteRenderer>().color = Color.white;
 
+    }
+
+    /// <summary>
+    /// Controls enemy movement
+    /// <summary>
+
+    public virtual IEnumerator Move() {
+        while (CurrentHP > 0) {
+            GetComponent<Rigidbody2D>().AddForce((player.transform.position - transform.position) * moveSpeed);
+            yield return new WaitForSeconds (UnityEngine.Random.Range(1, 3));
+            GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+            yield return new WaitForSeconds (UnityEngine.Random.Range(frequencyMin, frequencyMax));
+        }
     }
 
     /// <summary>
