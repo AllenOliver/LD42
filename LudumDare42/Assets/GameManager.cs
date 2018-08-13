@@ -53,7 +53,8 @@ public class GameManager : MonoBehaviour {
     {
         player = FindObjectOfType<Player>();
         CurrentPlayerHealth = MaxPlayerHealth;
-        
+        FadePanel.GetComponent<Animation>().Play("FadeIn");
+
     }
 
     // Use this for initialization
@@ -154,7 +155,8 @@ public class GameManager : MonoBehaviour {
         
         RestartPanel.GetComponent<Animation>().Play("Open");
         yield return new WaitForSeconds(.5f);
-        Time.timeScale = 0f;
+       
+      
     }
 
     /// <summary>

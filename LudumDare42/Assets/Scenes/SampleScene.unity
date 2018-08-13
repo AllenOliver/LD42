@@ -598,18 +598,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1048871011210276, guid: 3dbe91caa84bdbd4194edec3aa91649a,
     type: 2}
   m_PrefabInternal: {fileID: 2102169226}
---- !u!114 &289042359
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 289042353}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3c934cd476bab64091ea99ca6d3348e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ErrorSound: {fileID: 8300000, guid: 63776ced05d099f44a6d75ab0d146356, type: 3}
 --- !u!1 &317039800
 GameObject:
   m_ObjectHideFlags: 0
@@ -677,124 +665,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 28.803917, y: 17.183592}
   m_EdgeRadius: 0
---- !u!1 &327465902 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1046209498022132, guid: d1efcfb2f1ae9f043acc081871cd76f6,
-    type: 2}
-  m_PrefabInternal: {fileID: 1269056659}
 --- !u!114 &327465905 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114758103255416492, guid: d1efcfb2f1ae9f043acc081871cd76f6,
     type: 2}
   m_PrefabInternal: {fileID: 1269056659}
   m_Script: {fileID: 11500000, guid: 61713e997ecbe7d48af28a54e75fe361, type: 3}
---- !u!114 &327465907
+--- !u!114 &327465907 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 327465902}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114311354604060256, guid: d1efcfb2f1ae9f043acc081871cd76f6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1269056659}
   m_Script: {fileID: 11500000, guid: dedcb3f5033242f4986d23853c9400ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fadePanel: {fileID: 1266786324}
---- !u!82 &327465908
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 327465902}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d5e33725f1b4cf148a7096cc3d9c23ed, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 0.75
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1001 &490246447
 Prefab:
   m_ObjectHideFlags: 0
@@ -1494,11 +1376,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114777462015717572, guid: d1efcfb2f1ae9f043acc081871cd76f6,
-        type: 2}
-      propertyPath: prefabPoolOptions.Array.size
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 224160138227995686, guid: d1efcfb2f1ae9f043acc081871cd76f6,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -1589,6 +1466,11 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 114474811614833852, guid: d1efcfb2f1ae9f043acc081871cd76f6,
+        type: 2}
+      propertyPath: PausePanel
+      value: 
+      objectReference: {fileID: 1886302952}
     - target: {fileID: 114758103255416492, guid: d1efcfb2f1ae9f043acc081871cd76f6,
         type: 2}
       propertyPath: RestartPanel
@@ -1606,275 +1488,9 @@ Prefab:
       objectReference: {fileID: 1697584626}
     - target: {fileID: 114758103255416492, guid: d1efcfb2f1ae9f043acc081871cd76f6,
         type: 2}
-      propertyPath: MemoryFill
-      value: 
-      objectReference: {fileID: 1734877815}
-    - target: {fileID: 114758103255416492, guid: d1efcfb2f1ae9f043acc081871cd76f6,
-        type: 2}
-      propertyPath: MemoryText
-      value: 
-      objectReference: {fileID: 609387821}
-    - target: {fileID: 114758103255416492, guid: d1efcfb2f1ae9f043acc081871cd76f6,
-        type: 2}
-      propertyPath: HealthText
-      value: 
-      objectReference: {fileID: 260410989}
-    - target: {fileID: 114474811614833852, guid: d1efcfb2f1ae9f043acc081871cd76f6,
-        type: 2}
-      propertyPath: PausePanel
-      value: 
-      objectReference: {fileID: 1886302952}
-    - target: {fileID: 114758103255416492, guid: d1efcfb2f1ae9f043acc081871cd76f6,
-        type: 2}
       propertyPath: FadePanel
       value: 
       objectReference: {fileID: 1266786324}
-    - target: {fileID: 114777462015717572, guid: d1efcfb2f1ae9f043acc081871cd76f6,
-        type: 2}
-      propertyPath: prefabPoolOptions.Array.data[0].prefabTransform
-      value: 
-      objectReference: {fileID: 4410501884657788, guid: 623ffc638e82dc94da2b0b178d1b82e5,
-        type: 2}
-    - target: {fileID: 114777462015717572, guid: d1efcfb2f1ae9f043acc081871cd76f6,
-        type: 2}
-      propertyPath: prefabPoolOptions.Array.data[0].instancesToPreload
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 114777462015717572, guid: d1efcfb2f1ae9f043acc081871cd76f6,
-        type: 2}
-      propertyPath: prefabPoolOptions.Array.data[0].recycle
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114777462015717572, guid: d1efcfb2f1ae9f043acc081871cd76f6,
-        type: 2}
-      propertyPath: prefabPoolOptions.Array.data[1].prefabTransform
-      value: 
-      objectReference: {fileID: 4792610644943494, guid: 590a37acb30663f4192b4adb9ecdb85c,
-        type: 2}
-    - target: {fileID: 114777462015717572, guid: d1efcfb2f1ae9f043acc081871cd76f6,
-        type: 2}
-      propertyPath: prefabPoolOptions.Array.data[1].instancesToPreload
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 114777462015717572, guid: d1efcfb2f1ae9f043acc081871cd76f6,
-        type: 2}
-      propertyPath: prefabPoolOptions.Array.data[1].showDebugLog
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114777462015717572, guid: d1efcfb2f1ae9f043acc081871cd76f6,
-        type: 2}
-      propertyPath: prefabPoolOptions.Array.data[2].prefabTransform
-      value: 
-      objectReference: {fileID: 4971682185950500, guid: 6b739ad3068bfd949aeae8941b5920c9,
-        type: 2}
-    - target: {fileID: 114777462015717572, guid: d1efcfb2f1ae9f043acc081871cd76f6,
-        type: 2}
-      propertyPath: prefabPoolOptions.Array.data[2].instancesToPreload
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 114777462015717572, guid: d1efcfb2f1ae9f043acc081871cd76f6,
-        type: 2}
-      propertyPath: prefabPoolOptions.Array.data[2].isPoolExpanded
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114777462015717572, guid: d1efcfb2f1ae9f043acc081871cd76f6,
-        type: 2}
-      propertyPath: prefabPoolOptions.Array.data[2].showDebugLog
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114777462015717572, guid: d1efcfb2f1ae9f043acc081871cd76f6,
-        type: 2}
-      propertyPath: prefabPoolOptions.Array.data[2].cullAbove
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114777462015717572, guid: d1efcfb2f1ae9f043acc081871cd76f6,
-        type: 2}
-      propertyPath: prefabPoolOptions.Array.data[2].cullDelay
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114777462015717572, guid: d1efcfb2f1ae9f043acc081871cd76f6,
-        type: 2}
-      propertyPath: prefabPoolOptions.Array.data[2].cullAmount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114777462015717572, guid: d1efcfb2f1ae9f043acc081871cd76f6,
-        type: 2}
-      propertyPath: prefabPoolOptions.Array.data[2].hardLimit
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114777462015717572, guid: d1efcfb2f1ae9f043acc081871cd76f6,
-        type: 2}
-      propertyPath: prefabPoolOptions.Array.data[2].recycle
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114777462015717572, guid: d1efcfb2f1ae9f043acc081871cd76f6,
-        type: 2}
-      propertyPath: prefabPoolOptions.Array.data[0].isPoolExpanded
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114777462015717572, guid: d1efcfb2f1ae9f043acc081871cd76f6,
-        type: 2}
-      propertyPath: prefabPoolOptions.Array.data[1].recycle
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114777462015717572, guid: d1efcfb2f1ae9f043acc081871cd76f6,
-        type: 2}
-      propertyPath: prefabPoolOptions.Array.data[3].prefabTransform
-      value: 
-      objectReference: {fileID: 4822277504039406, guid: 716fd3d5d6313db49aa8c96b79fc0239,
-        type: 2}
-    - target: {fileID: 114777462015717572, guid: d1efcfb2f1ae9f043acc081871cd76f6,
-        type: 2}
-      propertyPath: prefabPoolOptions.Array.data[3].instancesToPreload
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 114777462015717572, guid: d1efcfb2f1ae9f043acc081871cd76f6,
-        type: 2}
-      propertyPath: prefabPoolOptions.Array.data[3].isPoolExpanded
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114777462015717572, guid: d1efcfb2f1ae9f043acc081871cd76f6,
-        type: 2}
-      propertyPath: prefabPoolOptions.Array.data[3].showDebugLog
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114777462015717572, guid: d1efcfb2f1ae9f043acc081871cd76f6,
-        type: 2}
-      propertyPath: prefabPoolOptions.Array.data[3].cullAbove
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114777462015717572, guid: d1efcfb2f1ae9f043acc081871cd76f6,
-        type: 2}
-      propertyPath: prefabPoolOptions.Array.data[3].cullDelay
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114777462015717572, guid: d1efcfb2f1ae9f043acc081871cd76f6,
-        type: 2}
-      propertyPath: prefabPoolOptions.Array.data[3].cullAmount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114777462015717572, guid: d1efcfb2f1ae9f043acc081871cd76f6,
-        type: 2}
-      propertyPath: prefabPoolOptions.Array.data[3].hardLimit
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114777462015717572, guid: d1efcfb2f1ae9f043acc081871cd76f6,
-        type: 2}
-      propertyPath: prefabPoolOptions.Array.data[3].recycle
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114777462015717572, guid: d1efcfb2f1ae9f043acc081871cd76f6,
-        type: 2}
-      propertyPath: isRootExpanded
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114777462015717572, guid: d1efcfb2f1ae9f043acc081871cd76f6,
-        type: 2}
-      propertyPath: prefabPoolOptions.Array.data[1].isPoolExpanded
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114777462015717572, guid: d1efcfb2f1ae9f043acc081871cd76f6,
-        type: 2}
-      propertyPath: prefabPoolOptions.Array.data[4].prefabTransform
-      value: 
-      objectReference: {fileID: 4988615673943106, guid: ccf730ea3779c0d4288eaec01d6dfd13,
-        type: 2}
-    - target: {fileID: 114777462015717572, guid: d1efcfb2f1ae9f043acc081871cd76f6,
-        type: 2}
-      propertyPath: prefabPoolOptions.Array.data[4].instancesToPreload
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 114777462015717572, guid: d1efcfb2f1ae9f043acc081871cd76f6,
-        type: 2}
-      propertyPath: prefabPoolOptions.Array.data[4].isPoolExpanded
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114777462015717572, guid: d1efcfb2f1ae9f043acc081871cd76f6,
-        type: 2}
-      propertyPath: prefabPoolOptions.Array.data[4].showDebugLog
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114777462015717572, guid: d1efcfb2f1ae9f043acc081871cd76f6,
-        type: 2}
-      propertyPath: prefabPoolOptions.Array.data[4].cullAbove
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114777462015717572, guid: d1efcfb2f1ae9f043acc081871cd76f6,
-        type: 2}
-      propertyPath: prefabPoolOptions.Array.data[4].cullDelay
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114777462015717572, guid: d1efcfb2f1ae9f043acc081871cd76f6,
-        type: 2}
-      propertyPath: prefabPoolOptions.Array.data[4].cullAmount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114777462015717572, guid: d1efcfb2f1ae9f043acc081871cd76f6,
-        type: 2}
-      propertyPath: prefabPoolOptions.Array.data[4].hardLimit
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114777462015717572, guid: d1efcfb2f1ae9f043acc081871cd76f6,
-        type: 2}
-      propertyPath: prefabPoolOptions.Array.data[4].recycle
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114777462015717572, guid: d1efcfb2f1ae9f043acc081871cd76f6,
-        type: 2}
-      propertyPath: prefabPoolOptions.Array.data[5].prefabTransform
-      value: 
-      objectReference: {fileID: 4370329208826914, guid: cfe8466e5823bf64eac0969c911ca4df,
-        type: 2}
-    - target: {fileID: 114777462015717572, guid: d1efcfb2f1ae9f043acc081871cd76f6,
-        type: 2}
-      propertyPath: prefabPoolOptions.Array.data[5].instancesToPreload
-      value: 2000
-      objectReference: {fileID: 0}
-    - target: {fileID: 114777462015717572, guid: d1efcfb2f1ae9f043acc081871cd76f6,
-        type: 2}
-      propertyPath: prefabPoolOptions.Array.data[5].isPoolExpanded
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114777462015717572, guid: d1efcfb2f1ae9f043acc081871cd76f6,
-        type: 2}
-      propertyPath: prefabPoolOptions.Array.data[5].showDebugLog
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114777462015717572, guid: d1efcfb2f1ae9f043acc081871cd76f6,
-        type: 2}
-      propertyPath: prefabPoolOptions.Array.data[5].cullAbove
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114777462015717572, guid: d1efcfb2f1ae9f043acc081871cd76f6,
-        type: 2}
-      propertyPath: prefabPoolOptions.Array.data[5].cullDelay
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114777462015717572, guid: d1efcfb2f1ae9f043acc081871cd76f6,
-        type: 2}
-      propertyPath: prefabPoolOptions.Array.data[5].cullAmount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114777462015717572, guid: d1efcfb2f1ae9f043acc081871cd76f6,
-        type: 2}
-      propertyPath: prefabPoolOptions.Array.data[5].hardLimit
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114777462015717572, guid: d1efcfb2f1ae9f043acc081871cd76f6,
-        type: 2}
-      propertyPath: prefabPoolOptions.Array.data[5].recycle
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114758103255416492, guid: d1efcfb2f1ae9f043acc081871cd76f6,
-        type: 2}
-      propertyPath: LevelSong
-      value: 
-      objectReference: {fileID: 8300000, guid: d5e33725f1b4cf148a7096cc3d9c23ed, type: 3}
-    - target: {fileID: 114758103255416492, guid: d1efcfb2f1ae9f043acc081871cd76f6,
-        type: 2}
-      propertyPath: BossSong
-      value: 
-      objectReference: {fileID: 8300000, guid: ffb25cc7301ef4f4290dafebec655680, type: 3}
     - target: {fileID: 114758103255416492, guid: d1efcfb2f1ae9f043acc081871cd76f6,
         type: 2}
       propertyPath: ToolTipPanel
@@ -1890,6 +1506,26 @@ Prefab:
       propertyPath: ToolTipTitle
       value: 
       objectReference: {fileID: 1782365592}
+    - target: {fileID: 114758103255416492, guid: d1efcfb2f1ae9f043acc081871cd76f6,
+        type: 2}
+      propertyPath: MemoryFill
+      value: 
+      objectReference: {fileID: 1734877815}
+    - target: {fileID: 114758103255416492, guid: d1efcfb2f1ae9f043acc081871cd76f6,
+        type: 2}
+      propertyPath: MemoryText
+      value: 
+      objectReference: {fileID: 609387821}
+    - target: {fileID: 114758103255416492, guid: d1efcfb2f1ae9f043acc081871cd76f6,
+        type: 2}
+      propertyPath: HealthText
+      value: 
+      objectReference: {fileID: 260410989}
+    - target: {fileID: 114311354604060256, guid: d1efcfb2f1ae9f043acc081871cd76f6,
+        type: 2}
+      propertyPath: fadePanel
+      value: 
+      objectReference: {fileID: 1266786324}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1efcfb2f1ae9f043acc081871cd76f6, type: 2}
   m_IsPrefabAsset: 0
