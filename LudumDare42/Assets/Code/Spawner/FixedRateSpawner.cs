@@ -8,6 +8,7 @@ public class FixedRateSpawner : MonoBehaviour
     public GameObject prefabToSpawn;
     public GameObject DoorToOpen;
     public GameObject DeathParticles;
+    public bool spawnerActive = false;
     [SerializeField] float SecondsBetweenSpawns;
 
     public int MemorySpace;
@@ -27,13 +28,15 @@ public class FixedRateSpawner : MonoBehaviour
     }
     void Update()
     {
-        _secondsSinceLastSpawn += Time.deltaTime;
+        if (spawnerActive) {
+            _secondsSinceLastSpawn += Time.deltaTime;
 
-        if (_secondsSinceLastSpawn > SecondsBetweenSpawns)
-        {
-            EZ_PoolManager.Spawn(prefabToSpawn.transform, gameObject.transform.position, gameObject.transform.rotation);
-            _secondsSinceLastSpawn = 0f;
-            //Debug.Log("FixedRateSpawner.Update(): New enemy spawned");
+            if (_secondsSinceLastSpawn > SecondsBetweenSpawns)
+            {
+                EZ_PoolManager.Spawn(prefabToSpawn.transform, gameObject.transform.position, gameObject.transform.rotation);
+                _secondsSinceLastSpawn = 0f;
+               //Debug.Log("FixedRateSpawner.Update(): New enemy spawned");
+            }
         }
     }
 
