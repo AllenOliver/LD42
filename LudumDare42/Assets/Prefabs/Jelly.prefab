@@ -214,7 +214,8 @@ MonoBehaviour:
   frequencyMax: 1
   isMob: 1
   MemorySpace: 2
-  ItemsToDrop: []
+  ItemsToDrop:
+  - {fileID: 0}
 --- !u!212 &212714358789172956
 SpriteRenderer:
   m_ObjectHideFlags: 1

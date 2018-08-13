@@ -110,15 +110,12 @@ public class GameManager : MonoBehaviour {
     {
         DeathPanel.GetComponent<Animation>().Play("Open");
         yield return new WaitForSeconds(1f);
-        Time.timeScale = 0f;
+
     }
 
     public void Respawn()
     {
-        if (Time. timeScale < 1f)
-        {
-            Time.timeScale = 1f;
-        }
+
         StartCoroutine(RespawnRoutine());
 
     }
@@ -139,8 +136,7 @@ public class GameManager : MonoBehaviour {
         if (memoryOpened)
         {
             StartCoroutine(PlayErrorSound());
-            
-           
+
         }
 
     }
@@ -151,10 +147,11 @@ public class GameManager : MonoBehaviour {
         var SoundToPlay = RestartPanel.GetComponent<AudioSource>();
         SoundToPlay.clip = RestartPanel.GetComponent<LosePanelScript>().ErrorSound;
         SoundToPlay.Play();
+        RestartPanel.GetComponent<Animation>().Play("Open");
         yield return new WaitForSeconds(RestartPanel.GetComponent<AudioSource>().clip.length);
         
-        RestartPanel.GetComponent<Animation>().Play("Open");
-        yield return new WaitForSeconds(.5f);
+
+   
        
       
     }
@@ -175,7 +172,7 @@ public class GameManager : MonoBehaviour {
     {
         WinPanel.GetComponent<Animation>().Play("Open");
         yield return new WaitForSeconds(.5f);
-        Time.timeScale = 0f;
+        //Time.timeScale = 0f;
     }
 
     public void OpenToolTip(string ToolTipTitle, string ToolTipBody)
