@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour {
     bool winOpened;
     bool loseOpened;
     bool memoryOpened;
+    bool WarningOpened;
     #endregion
 
     private void Awake()
@@ -61,6 +62,7 @@ public class GameManager : MonoBehaviour {
         winOpened = false;
         loseOpened = false;
         memoryOpened = false;
+        WarningOpened = false;
         
     }
 	
@@ -69,6 +71,11 @@ public class GameManager : MonoBehaviour {
         if (Memory < 0)
         {
             Memory = 0;
+        }
+        else if (Memory > 750 && !WarningOpened)
+        {
+            OpenToolTip("Memory Limit Close!","Memory at 75% compacity!");
+            WarningOpened = true;
         }
         else if (Memory >= 1000)
         {
@@ -87,6 +94,7 @@ public class GameManager : MonoBehaviour {
         float fillamount = Memory / 1000f;
         MemoryFill.fillAmount = Mathf.Clamp01(fillamount);
         MemCheck();
+        SpawnerCheck();
     }
 
     /// <summary>
@@ -94,11 +102,22 @@ public class GameManager : MonoBehaviour {
     /// </summary>
     public void OpenDeathPanel()
     {
+        StartCoroutine(OpenDeathPanelRoutine());
+    }
+
+    IEnumerator OpenDeathPanelRoutine()
+    {
         DeathPanel.GetComponent<Animation>().Play("Open");
+        yield return new WaitForSeconds(1f);
+        Time.timeScale = 0f;
     }
 
     public void Respawn()
     {
+        if (Time. timeScale < 1f)
+        {
+            Time.timeScale = 1f;
+        }
         StartCoroutine(RespawnRoutine());
 
     }
@@ -128,9 +147,14 @@ public class GameManager : MonoBehaviour {
 
     IEnumerator PlayErrorSound()
     {
-        RestartPanel.GetComponent<AudioSource>().Play();
+        var SoundToPlay = RestartPanel.GetComponent<AudioSource>();
+        SoundToPlay.clip = RestartPanel.GetComponent<LosePanelScript>().ErrorSound;
+        SoundToPlay.Play();
         yield return new WaitForSeconds(RestartPanel.GetComponent<AudioSource>().clip.length);
+        
         RestartPanel.GetComponent<Animation>().Play("Open");
+        yield return new WaitForSeconds(.5f);
+        Time.timeScale = 0f;
     }
 
     /// <summary>
@@ -139,13 +163,18 @@ public class GameManager : MonoBehaviour {
     /// </summary>
     public void SpawnerCheck()
     {
-        var objects = FindObjectsOfType<FixedRateSpawner>();
+        var objects = FindObjectsOfType<BossVirus>();
         if (objects.Length <=0)
         {
-            WinPanel.GetComponent<Animation>().Play("Open");
+            StartCoroutine(enumeratorWinPanel());
         }
     }
-
+     IEnumerator enumeratorWinPanel()
+    {
+        WinPanel.GetComponent<Animation>().Play("Open");
+        yield return new WaitForSeconds(.5f);
+        Time.timeScale = 0f;
+    }
 
     public void OpenToolTip(string ToolTipTitle, string ToolTipBody)
     {

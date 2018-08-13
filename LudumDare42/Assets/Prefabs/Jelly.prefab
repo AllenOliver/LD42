@@ -63,7 +63,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!58 &58608678849591610
 CircleCollider2D:
@@ -195,9 +195,9 @@ Animator:
   m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114248872642913328
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1889742879451052}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -209,18 +209,11 @@ MonoBehaviour:
   DeathParticles: {fileID: 1575517153828332, guid: 6b739ad3068bfd949aeae8941b5920c9,
     type: 2}
   deathSound: {fileID: 8300000, guid: 4bddc567f94db7a45a128b30c1b56952, type: 3}
- Credit-Scene
-  moveSpeed: 15
-  frequencyMin: 0
-  frequencyMax: 0
+  moveSpeed: 20
+  frequencyMin: 0.5
+  frequencyMax: 1
   isMob: 1
-
-  moveSpeed: 0
-  frequencyMin: 0
-  frequencyMax: 0
-  isMob: 0
- master
-  MemorySpace: 4
+  MemorySpace: 2
   ItemsToDrop: []
 --- !u!212 &212714358789172956
 SpriteRenderer:

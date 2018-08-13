@@ -20,6 +20,7 @@ public class Player : MonoBehaviour {
     public Transform shotSpot;
 
     public AudioClip Shoot;
+    public AudioClip HitSound;
     public AudioClip DieSound;
 
     public GameObject DeathParticles;
@@ -105,6 +106,7 @@ public class Player : MonoBehaviour {
     /// </summary>
     public void HurtPlayer()
     {
+        StartCoroutine(PlaySound(HitSound));
         StartCoroutine(PlayerHurt());
     }
 
@@ -116,7 +118,6 @@ public class Player : MonoBehaviour {
     {
         GetComponent<SpriteRenderer>().color = Color.red;
         gm.CurrentPlayerHealth--;
-        
         Die();
         yield return new WaitForSeconds(.5f);
         GetComponent<SpriteRenderer>().color = Color.white;
@@ -133,8 +134,8 @@ public class Player : MonoBehaviour {
         {
             StartCoroutine(PlaySound(DieSound));
             Instantiate(DeathParticles, gameObject.transform.position, Quaternion.identity);
-
-            gm.Respawn();
+            GetComponent<SpriteRenderer>().enabled = false ;
+            gm.OpenDeathPanel();
         }
 
     }

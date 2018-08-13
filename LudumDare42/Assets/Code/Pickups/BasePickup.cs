@@ -14,25 +14,19 @@ public class BasePickup : MonoBehaviour {
 
     public string Name;
     public string Description;
+    AudioSource audio;
+    public AudioClip PickupSound;
     GameManager gm;
     #endregion
 
     /// <summary>
-    /// Constuctor
-    /// </summary>
-    public BasePickup()
-    {
-
-    }
-
-    // Use this for initialization
-    /// <summary>
-    /// Pooled starting point
+    /// starting point
     /// </summary>
     public virtual void Start()
     {
         gameObject.tag = "PickUp";
         gm = FindObjectOfType<GameManager>();
+        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -47,7 +41,8 @@ public class BasePickup : MonoBehaviour {
         {
             case ("Player"):
                 PowerupEffect();
-                gm.OpenToolTip(Name, Description);
+                PlayerSound();
+                gm.OpenToolTip(this.Name, this.Description);
                 Destroy(gameObject);
                 break;
 
@@ -59,7 +54,18 @@ public class BasePickup : MonoBehaviour {
         Debug.Log("Give me some effects here");
     }
 
+    public void PlayerSound()
+    {
+        StartCoroutine(PlaySound());
+    }
 
+    IEnumerator PlaySound()
+    {
+        audio.clip = PickupSound;
+       
+        yield return null;
+        audio.Play();
+    }
 
 
 }

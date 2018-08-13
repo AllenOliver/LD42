@@ -99,7 +99,7 @@ public class BaseEnemy : MonoBehaviour {
     public virtual IEnumerator Move() {
         while (CurrentHP > 0) {
             GetComponent<Rigidbody2D>().AddForce((player.transform.position - transform.position) * moveSpeed);
-            yield return new WaitForSeconds (UnityEngine.Random.Range(1, 3));
+            yield return new WaitForSeconds (UnityEngine.Random.Range(.25f, .75f));
             GetComponent<Rigidbody2D>().velocity = Vector3.zero;
             yield return new WaitForSeconds (UnityEngine.Random.Range(frequencyMin, frequencyMax));
         }

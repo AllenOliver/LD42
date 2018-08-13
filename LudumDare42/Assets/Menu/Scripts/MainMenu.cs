@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+
+    public GameObject HowTopPlayPanel;
+
     [Header("Scenes names to load on button press")]
     [SerializeField] string OnPlayLoad;
     public void OnPlayPressed()
@@ -21,5 +24,16 @@ public class MainMenu : MonoBehaviour
     public void OnCreditsPressed()
     {
         SceneManager.LoadScene("CreditScene");
+    }
+
+    public void OnHowToPlayPressed()
+    {
+        HowTopPlayPanel.GetComponent<Animation>().Play("Open");
+    }
+
+    public void OnHowToPlayClose()
+    {
+        HowTopPlayPanel.GetComponent<Animation>().Play("Close");
+
     }
 }

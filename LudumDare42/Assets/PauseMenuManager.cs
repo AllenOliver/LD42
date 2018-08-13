@@ -13,7 +13,7 @@ public class PauseMenuManager : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update () {
+    void Update() {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             PauseGame();
@@ -23,31 +23,38 @@ public class PauseMenuManager : MonoBehaviour {
     public void PauseGame()
     {
 
-            if (!paused)
+        if (!paused)
+        {
+            paused = true;
+
+
+            if (PausePanel)
             {
-                paused = true;
+                PausePanel.GetComponent<Animation>().Play("Open");
+            }
+            //StartCoroutine(StopTime());
 
-            
-                if (PausePanel)
-                {
-                    PausePanel.GetComponent<Animation>().Play("Open");
-                }
-
-            //Time.timeScale = 0f;
         }
-            else
-            {
+        else
+        {
 
             
-                if (PausePanel)
-                {
-
-                    PausePanel.GetComponent<Animation>().Play("Close");
-
-                }
-                paused = false;
+            if (PausePanel)
+            {
+                //Time.timeScale = 1f;
+                PausePanel.GetComponent<Animation>().Play("Close");
 
             }
-        
+            paused = false;
+
+        }
+
+    }
+
+    IEnumerator StopTime()
+    {
+
+        yield return new WaitForSeconds(1f);
+        Time.timeScale = 0f;
     }
 }

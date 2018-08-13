@@ -33,7 +33,7 @@ public class FixedRateSpawner : MonoBehaviour
         {
             EZ_PoolManager.Spawn(prefabToSpawn.transform, gameObject.transform.position, gameObject.transform.rotation);
             _secondsSinceLastSpawn = 0f;
-            Debug.Log("FixedRateSpawner.Update(): New enemy spawned");
+            //Debug.Log("FixedRateSpawner.Update(): New enemy spawned");
         }
     }
 
