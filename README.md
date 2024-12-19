@@ -20,7 +20,7 @@ Current developers helping with the project! *More will be added later!*
 
 | Contributors | Websites |
 | ------ | ------ |
-| Allen Oliver | http://aribaa.com/ |
+| Allen Oliver | |
 | Gerald Burke | http://www.geraldburke.com/ |
 
 ## Todos
